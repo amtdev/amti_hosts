@@ -16,3 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+template '/etc/hosts' do
+  source 'hosts.erb'
+  mode 0755
+  owner 'root'
+  group 'root'
+  variables(
+    :name        	 => node['hosts']['name'])
+end
